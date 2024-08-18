@@ -1,0 +1,32 @@
+<!-- Module 3 - Fundamentals of Creative Coding!
+ This HTML file demonstrates basic canvas drawing using JavaScript-->
+
+<html>
+  <body>
+    <!-- Canvas element -->
+    <canvas width="600" height="600">
+
+    </canvas>
+
+    <script>
+        // Get the canvas element and its 2D rendering context
+        let canvas = document.querySelector('canvas');
+        let context = canvas.getContext('2d');
+
+        // Set drawing styles
+        context.fillStyle = "blue";
+        context.lineWidth = 4;
+
+        // Draw a square
+        context.beginPath();
+        context.rect(100, 100, 400, 400);
+        context.stroke();
+
+        // Draw a circle inside the square
+        context.beginPath();
+        context.arc(300, 300, 100, 0, Math.PI * 2);
+        context.stroke();
+
+    </script>
+  </body>
+</html>
