@@ -1,0 +1,46 @@
+<!-- Generative Grid -->
+
+<html>
+    <body>
+      <!-- Canvas element -->
+      <canvas width="600" height="600">
+  
+      </canvas>
+  
+      <script>
+          // Get the canvas element and its 2D rendering context
+          let canvas = document.querySelector('canvas');
+          let context = canvas.getContext('2d');
+  
+          // Set drawing styles
+          context.lineWidth = 4;
+
+          // Define grid parameters
+          const width = 60;
+          const height = 60;
+          const gap = 20;
+
+          // Nested loops to create 5x5 grid
+          for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 5; j++) {
+              // Calculate positions for each cell
+              let x = 100 + (width + gap) * i;
+              let y = 10 + (height + gap) * j;
+
+              // Draw outer rectangle
+              context.beginPath();
+              context.rect(x, y, width, height);
+              context.stroke();
+
+              // Randomly draw inner rectangle in some cells
+              if (Math.random() > 0.5) {
+                context.beginPath();
+                context.rect(x + 8, y + 8, width - 16, height - 16);
+                context.stroke();
+              }
+            }
+          }
+      </script>
+    </body>
+  </html>
+  
